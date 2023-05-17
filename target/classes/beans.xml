@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="act1" class="com.stackroute.Domain.Actor">
+        <property name="name" value="ironman"/>
+        <property name="gender" value="male"/>
+        <property name="age" value="20"/>
+    </bean>
+    <bean id="act2" class="com.stackroute.Domain.Actor">
+        <property name="name" value="spiderman"/>
+        <property name="gender" value="male"/>
+        <property name="age" value="25"/>
+    </bean>
+    <bean id="movie1" class="com.stackroute.Domain.Movie">
+        <property name="act">
+            <list value-type="java.util.list">
+                <ref bean="act1"/>
+                <ref bean="act2"/>
+            </list>
+        </property>
+    </bean>
+</beans>
